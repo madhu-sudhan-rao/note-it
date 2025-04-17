@@ -22,12 +22,10 @@ export const metadata: Metadata = {
       {
         media: "(prefers-color-scheme: light)",
         url: "/logo.svg",
-        href: "/logo.svg"
       },
       {
         media: "(prefers-color-scheme: dark)",
         url: "/logo-dark.svg",
-        href: "/logo-dark.svg"
       }
     ]
   }
@@ -39,12 +37,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning >
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ConvexClientProvider>
-          <ThemeProvider attribute={"class"} defaultTheme="system" enableSystem disableTransitionOnChange storageKey="note-it-theme">
+          <ThemeProvider 
+            attribute="class" 
+            defaultTheme="system" 
+            enableSystem 
+            disableTransitionOnChange 
+            storageKey="note-it-theme"
+          >
             {children}
           </ThemeProvider>
         </ConvexClientProvider>

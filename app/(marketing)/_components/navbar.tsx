@@ -7,6 +7,7 @@ import { ModeToggle } from "@/components/mode-toggle";
 import { useConvexAuth } from "convex/react";
 import { SignInButton } from "@clerk/clerk-react";
 import { Button } from "@/components/ui/button";
+import { Spinner } from "@/components/spinner";
 
 const Navbar = () => {
   const {isAuthenticated, isLoading} = useConvexAuth()
@@ -27,7 +28,7 @@ const Navbar = () => {
 
         {
           isLoading && (
-            <p>Loading...</p>
+            <Spinner />
           )
         }
 
